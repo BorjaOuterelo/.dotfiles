@@ -132,4 +132,3 @@ export MAKEFLAGS="-j${NUMCPUS_JOBS} -l${NUMCPUS_LOAD}"
   # Variable used in CMake to pass through other project the MAKEFLAGS
 export CMAKE_MAKEFLAGS=$MAKEFLAGS
 
-eval $(thefuck --alias)
