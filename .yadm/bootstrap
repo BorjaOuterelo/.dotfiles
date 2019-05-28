@@ -1,14 +1,22 @@
 #!/bin/bash
 
 zsh_path="$(chsh -l | grep -m1 zsh)"
-if [ "$zsh_path" ]; then                                                                                                                                                                                                                  
+if [ "$zsh_path" ] && [[ $SHELL != *zsh ]] ; then
     chsh -s "$zsh_path"
 fi
  
 if [[ $SHELL == *zsh ]]; then
     # source <"$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    if [ ! -d "$HOME"/.oh-my-zsh ] ; then
+        git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    fi
     if [ -f "$HOME"/.zshrc ] && [ -f "$HOME"/.zshrc.pre-oh-my-zsh ]; then
         mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+    fi
+    if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ] ; then
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    fi
+    if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/timewarrior ] ; then
+        git clone https://github.com/svenXY/timewarrior ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/timewarrior
     fi
 fi
