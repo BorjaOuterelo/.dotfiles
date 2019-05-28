@@ -1,0 +1,14 @@
+#!/bin/bash
+
+zsh_path="$(chsh -l | grep -m1 zsh)"
+if [ "$zsh_path" ]; then                                                                                                                                                                                                                  
+    chsh -s "$zsh_path"
+fi
+ 
+if [[ $SHELL == *zsh ]]; then
+    # source <"$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    if [ -f "$HOME"/.zshrc ] && [ -f "$HOME"/.zshrc.pre-oh-my-zsh ]; then
+        mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+    fi
+fi
