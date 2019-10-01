@@ -54,6 +54,10 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# oh-my-zsh plugins
+# tmux
+export ZSH_TMUX_AUTOSTART=true
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -65,12 +69,14 @@ plugins=(
   timewarrior
   docker
   docker-machine
+  tmux
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export DEFAULT_USER=`id -un`
+
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
