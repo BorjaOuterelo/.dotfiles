@@ -47,5 +47,7 @@
     "doxdocgen.generic.paramTemplate": "\\param {param} ",
     "doxdocgen.generic.returnTemplate": "\\return {type} ",
     "doxdocgen.generic.authorTag": "\\author {author} ({email})",
-    "doxdocgen.file.versionTag": "\\version 0.1"
+    "doxdocgen.file.versionTag": "\\version 0.1",
+    "terminal.integrated.rendererType": "experimentalWebgl",
+    "workbench.activityBar.visible": true
 }
