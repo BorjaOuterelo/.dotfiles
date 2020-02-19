@@ -115,7 +115,7 @@ source /usr/share/fzf/completion.zsh
 # These env variables override the default git pager behaviour. The GIT_PAGER variable restore it to its default.
 export GIT_PAGER="less -FRX"
 
-alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -G Ninja' #  -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
+alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON' # -G Ninja' #  -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
 alias make='remake'
 alias gtree='BLACK=`tput setaf 0`
                     RED=`tput setaf 1`
